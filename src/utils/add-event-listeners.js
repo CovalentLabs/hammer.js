@@ -1,5 +1,6 @@
 import each from './each';
 import splitStr from './split-str';
+import passiveArgument from './passive-events';
 /**
  * @private
  * addEventListener with multiple events at once
@@ -9,6 +10,6 @@ import splitStr from './split-str';
  */
 export default function addEventListeners(target, types, handler) {
   each(splitStr(types), (type) => {
-    target.addEventListener(type, handler, false);
+    target.addEventListener(type, handler, passiveArgument);
   });
 }
